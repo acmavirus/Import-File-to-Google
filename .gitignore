@@ -1,0 +1,23 @@
+# Sensitive Credentials (API secrets & OAuth session tokens)
+credentials.json
+token.json
+client_secret_*.json
+.env
+
+# Build & Compilation Artifacts
+build/
+dist/
+*.spec
+
+# Test files & logs
+test_import.xlsx
+*.log
+
+# Python specific files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
