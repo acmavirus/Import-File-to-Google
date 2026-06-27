@@ -40,6 +40,12 @@ Script sẽ tạo:
 - `dist\ImportToSheet.exe`
 - `dist\Setup_ImportToSheet.exe`
 
+## GitHub Actions và Releases
+
+- Mỗi lần push lên `main`, GitHub Actions sẽ tự build 2 file exe và lưu dưới dạng artifact.
+- Khi push một tag có dạng `v*` như `v1.0.1`, workflow sẽ tự tạo GitHub Release và đính kèm 2 file exe.
+- File workflow nằm tại `.github/workflows/build-release.yml`.
+
 ## Lưu ý
 
 - Nếu không có `credentials.json` trong thư mục cài đặt, ứng dụng sẽ không thể xác thực Google.
