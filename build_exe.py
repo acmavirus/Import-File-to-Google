@@ -27,7 +27,7 @@ def main():
         if os.path.exists(folder):
             print(f"Removing {folder} folder...")
             shutil.rmtree(folder, ignore_errors=True)
-            
+
     # 1. Build main application EXE
     print("\n--- STEP 2: Compiling core application (ImportToSheet.exe) ---")
     cmd_app = pyinstaller_cmd + [
@@ -40,14 +40,14 @@ def main():
     if not run_command(cmd_app):
         print("Failed to compile core application.")
         sys.exit(1)
-        
+
     app_exe = os.path.join("dist", "ImportToSheet.exe")
     if not os.path.exists(app_exe):
         print(f"Error: Compiled core executable not found at {app_exe}")
         sys.exit(1)
-        
+
     print(f"Successfully compiled: {app_exe}")
-    
+
     # 2. Build Installer wizard EXE containing the core EXE as data resource
     print("\n--- STEP 3: Compiling graphical Installer Wizard (Setup_ImportToSheet.exe) ---")
     cmd_setup = pyinstaller_cmd + [
@@ -61,12 +61,12 @@ def main():
     if not run_command(cmd_setup):
         print("Failed to compile Installer Wizard.")
         sys.exit(1)
-        
+
     setup_exe = os.path.join("dist", "Setup_ImportToSheet.exe")
     if not os.path.exists(setup_exe):
         print(f"Error: Compiled Setup executable not found at {setup_exe}")
         sys.exit(1)
-        
+
     print(f"Successfully compiled Setup wizard: {setup_exe}")
     print("\n=======================================================")
     print(" BUILD SUCCESSFUL! ")

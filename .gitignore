@@ -1,8 +1,16 @@
 # Sensitive Credentials (API secrets & OAuth session tokens)
 credentials.json
+**/credentials.json
 token.json
+**/token.json
 client_secret_*.json
+**/client_secret_*.json
 .env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
 
 # Build & Compilation Artifacts
 build/
